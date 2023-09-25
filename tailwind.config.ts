@@ -8,11 +8,18 @@ const config: Config = {
   ],
   mode: 'jit',
   theme: {
+    fontFamily: {
+      poppins: ['Poppins', 'sans-serif'],
+      mono: ['Roboto Mono', 'monospace'],
+      grotesk: ['Space Grotesk', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: '#050816',
         secondary: '#aaa6c3',
         tertiary: '#151030',
+        biru: '#66d9ed',
+        ungu: '#9b51e0',
         'black-100': '#100d25',
         'black-200': '#090325',
         'white-100': '#f3f3f3',
@@ -24,7 +31,7 @@ const config: Config = {
         xs: '450px',
       },
       backgroundImage: {
-        'hero-pattern': "url('/src/assets/herobg.png')",
+        'hero-pattern': "url('/public/assets/herobg.png')",
       },
     },
   },
