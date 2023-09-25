@@ -10,7 +10,7 @@ import SectionWrapper from '@/hoc/SectionWrapper';
 const About = () => {
   return (
     <div className="relative flex flex-col items-center justify-center w-full h-screen max-auto mt-[50%] md:mt-0">
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0.3)}>
         <h2 className="font-poppins text-white font-bold md:text-[68px] sm:text-[58px] xs:text-[50px] text-[40px] ">
           My Expertise.
         </h2>
