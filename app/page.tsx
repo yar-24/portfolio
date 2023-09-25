@@ -10,7 +10,7 @@ import Projects from '@/components/Projects';
 export default function Home() {
   return (
     <div className="relative z-0 bg-primary overflow-x-hidden">
-      <div className="relative bg-hero-pattern bg-cover bg-no-repeat bg-center">
+      <div className="relative">
         <Image
           src={bgHero}
           alt="hero-bg"
@@ -18,7 +18,7 @@ export default function Home() {
         />
         <Navbar />
         <Hero />
-        <div className="gradient-04 z-0" />
+        <div className="gradient-04" />
       </div>
       <div className="relative">
         <About />

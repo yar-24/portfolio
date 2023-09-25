@@ -1,14 +1,15 @@
+'use client';
+
 import { styles } from '@/styles';
 import Image from 'next/image';
 import React from 'react';
 import Scroll from '@/public/assets/scroll.gif';
+import SectionWrapper from '@/hoc/SectionWrapper';
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen max-auto">
-      <div
-        className={`${styles.paddingX} absolute inset-0  max-w-7xl mx-auto flex flex-col items-center justify-center gap-5`}
-      >
+    <section className="w-full h-[80vh] max-auto">
+      <div className="relative h-full mx-auto flex flex-col items-center justify-center">
         <div className="flex flex-col items-center justify-center">
           <h1 className="font-bold text-white text-[50px] md:text-center md:text-[120px] font-poppins">
             AKHYAR YAR
@@ -17,7 +18,7 @@ const Hero = () => {
             FRONT END, BACK END & FULLSTACK DEVELOPER.
           </h3>
         </div>
-        <a href="#about" className="absolute bottom-10 z-10">
+        <a href="#about" className="absolute bottom-0">
           <Image src={Scroll} width={60} height={100} alt="icon-scoll" />
         </a>
       </div>
@@ -25,4 +26,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default SectionWrapper(Hero, 'home');

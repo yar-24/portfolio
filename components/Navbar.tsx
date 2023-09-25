@@ -36,7 +36,7 @@ const Navbar = () => {
         <ul
           className={` ${
             show ? 'translate-y-0' : 'translate-y-full'
-          } w-full mx-auto text-center py-5 fixed bg-red-700 z-50 translate-all ease-in-out duration-300 translate-y-15 list-none hidden lg:flex flex-row justify-center gap-10 font-mono`}
+          } w-full mx-auto text-center py-5 fixed bg-gradient-to-b from-black-200 to-transparent z-50 translate-all ease-in-out duration-300 translate-y-15 list-none hidden lg:flex flex-row justify-center gap-10 font-mono`}
         >
           {navLinks.map((link) => (
             <li

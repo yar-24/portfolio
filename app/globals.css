@@ -121,6 +121,7 @@
   width: 100vw;
   height: 50vh;
   bottom: -10%;
+  z-index: 1;
 
   background: rgba(0, 0, 0, 0.75);
   filter: blur(50px);
