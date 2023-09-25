@@ -10,7 +10,7 @@ const Hero = () => {
         className={`${styles.paddingX} absolute inset-0  max-w-7xl mx-auto flex flex-col items-center justify-center gap-5`}
       >
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-bold text-white text-[50px] sm:text-[120px] font-poppins">
+          <h1 className="font-bold text-white text-[50px] md:text-center md:text-[120px] font-poppins">
             AKHYAR YAR
           </h1>
           <h3 className="font-semibold text-base sm:text-2xl text-center font-mono">

@@ -5,14 +5,14 @@ import React from 'react';
 
 const Projects = () => {
   return (
-    <div className="relative flex flex-col w-full h-auto max-auto sm:px-16 px-6">
+    <div className="relative flex flex-col w-full h-auto max-auto sm:px-16 px-6 xl:my-0 sm:my-[20%] my-[30%]">
       <h1>Filter</h1>
       <div className="md:grid grid-cols-3 gap-4 w-full cursor-pointer">
         {projects.map(
           (project, idx) =>
             idx < 3 && (
               <div key={idx} className="bg-[#0B1232] rounded-md mb-4 md:mb-0">
-                <div className="h-auto overflow-hidden">
+                <div className="h-auto overflow-hidden rounded-t-md">
                   <Image
                     src={project.image}
                     alt="eundang"

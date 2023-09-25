@@ -33,14 +33,13 @@ const Work = () => {
         >
           <source data-src="/hp.webm" src="/hp.webm" type="video/webm" />
         </video>
-        <div className="absolute flex flex-col bottom-10 md:right-0">
+        <div className="absolute flex flex-col bottom-0 lg:bottom-10 md:right-0">
           <Image
             className="self-center md:-scale-x-100"
             src={arrow}
             alt="arrow"
             width={100}
             height={100}
-            // style={{ transform: 'scaleX(-1)' }}
           />
           <div className="flex flex-col md:items-end">
             <p className="md:text-xl text-base font-semibold font-poppins">
