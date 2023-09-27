@@ -22,7 +22,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <a href="#about" className="absolute bottom-40 cursor-pointer z-10">
-          <Image src={scroll} className="w-[50px] h-auto" alt="icon-scoll" />
+          <Image src={scroll} className="w-[70px] h-auto" alt="icon-scoll" />
         </a>
         <div className="gradient-04" />
       </div>

@@ -6,21 +6,18 @@ import { motion } from 'framer-motion';
 import { slideIn } from '@/utils/motion';
 import emailjs from '@emailjs/browser';
 import SectionWrapper from '@/hoc/SectionWrapper';
-import { computer, quote } from '@/public/assets';
+import { quote } from '@/public/assets';
 import Image from 'next/image';
-import { Tilt } from 'react-tilt';
 import { katamereka } from '@/constans';
 
 const Contact = () => {
-  const formRef = useRef();
+  const formRef = useRef<HTMLInputElement>();
   const [form, setForm] = useState({
     name: '',
     email: '',
     message: '',
   });
   const [loading, setLoading] = useState(false);
-
-  const formElement = document.querySelector('form') as HTMLFormElement;
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -65,7 +62,7 @@ const Contact = () => {
           Contact.
         </h3>
         <form
-          ref={formRef}
+          // ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
@@ -117,7 +114,8 @@ const Contact = () => {
           <>
             {kata.id == 1 ? (
               <div
-                className={`row-span-3 col-auto p-7 bg-[${kata.bgColor}]`}
+                className="row-span-3 col-auto p-7"
+                style={{ backgroundColor: `${kata.bgColor}` }}
                 key={idx}
               >
                 <Image src={quote} alt={kata.name} width={80} height={80} />
@@ -127,7 +125,8 @@ const Contact = () => {
               </div>
             ) : (
               <div
-                className={`row-span-1 col-span-1 p-7 bg-[${kata.bgColor}]`}
+                className="row-span-1 col-span-1 p-7"
+                style={{ backgroundColor: `${kata.bgColor}` }}
                 key={idx}
               >
                 <Image src={quote} alt={kata.name} width={80} height={80} />
