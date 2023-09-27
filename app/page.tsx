@@ -6,18 +6,23 @@ import About from '@/components/About';
 import { codebg } from '@/public/assets';
 import Work from '@/components/Work';
 import Projects from '@/components/Projects';
+import scroll from '@/public/assets/scroll.gif';
+import Experiences from '@/components/Experiences';
 
 export default function Home() {
   return (
     <div className="relative z-0 bg-primary overflow-x-hidden">
-      <div className="relative">
+      <div className="flex relative flex-col items-center">
         <Image
           src={bgHero}
           alt="hero-bg"
-          className="absolute w-full h-screen opacity-20 bg-cover"
+          className="absolute w-auto h-screen opacity-20 bg-cover"
         />
         <Navbar />
         <Hero />
+        <a href="#about" className="absolute bottom-40 cursor-pointer z-10">
+          <Image src={scroll} className="w-[50px] h-auto" alt="icon-scoll" />
+        </a>
         <div className="gradient-04" />
       </div>
       <div className="relative">
@@ -30,6 +35,7 @@ export default function Home() {
         <Work />
       </div>
       <Projects />
+      <Experiences />
     </div>
   );
 }

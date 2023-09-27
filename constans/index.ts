@@ -159,6 +159,38 @@ const experiences = [
       'Implementing responsive design and ensuring cross-browser compatibility.',
     ],
   },
+  // {
+  //   title: 'Aug 2022 - Des 2022',
+  //   cardTitle: 'Front-End Web and React Developer',
+  //   url: 'http://www.history.com',
+  //   cardSubtitle: 'Study Independent | Dicoding',
+  //   cardDetailedText: [
+  //     'Dicoding Learned and applied a wide range of web front-end skills, from basic to expert level, while collaborating with a team.',
+  //     'As a team leader, I was responsible for generating ideas, developing both frontend and backend components, and presenting projects.',
+  //   ],
+  // },
+  // {
+  //   title: 'Apr 2022 - Aud 2022',
+  //   cardTitle: 'Full-Stack Web Developer',
+  //   url: 'http://www.history.com',
+  //   cardSubtitle: 'Scientific Writing',
+  //   cardDetailedText: [
+  //     'Universitas Gunadarma Developed an online invitation web application using the MERN stack technology.',
+  //     'Implemented a payment gateway from midtrans to facilitate secure and seamless transactions within the application.',
+  //     'Implementing responsive design and ensuring cross-browser compatibility.',
+  //   ],
+  // },
+  // {
+  //   title: '2021-2022',
+  //   cardTitle: 'Part-time Front-End Developer',
+  //   url: 'http://www.history.com',
+  //   cardSubtitle: 'Bintang Studio',
+  //   cardDetailedText: [
+  //     'Developing and maintaining web applications using React.js and other related technologies.',
+  //     'Created a visually appealing photography service website using ReactJS.',
+  //     'Implementing responsive design and ensuring cross-browser compatibility.',
+  //   ],
+  // },
 ];
 
 const certificates = [
@@ -264,45 +296,45 @@ const certificates = [
 const projects = [
   {
     name: 'Nafas',
-    description:
-      'Web-based platform that allows users to search, buy, and manage blog, providing a convenient and efficient solution for plants your needs.',
+    desc: 'Web-based platform that allows users to search, buy, and manage blog, providing a convenient and efficient solution for plants your needs.',
     image: nafas,
-    source_code_link: 'https://nafas-mu.vercel.app/',
+    link: 'https://nafas-mu.vercel.app/',
+    cat: 'Mobile Development',
   },
   {
     name: 'EUndang',
-    description:
-      'A web application that allows users to order invitation templates, view interesting themes, and be able to order with a paymentgateway.',
+    desc: 'A web application that allows users to order invitation templates, view interesting themes, and be able to order with a paymentgateway.',
     image: eundang,
-    source_code_link: 'https://github.com/yar-24/admin-eundang',
+    link: 'https://github.com/yar-24/admin-eundang',
+    cat: 'Website Development',
   },
   {
     name: 'Bintang photo',
-    description:
-      'Ordering and service platform available at the star photo studio company.',
+    desc: 'Ordering and service platform available at the star photo studio company.',
     image: bintangphoto,
-    source_code_link: 'https://github.com/yar-24/bintangphoto',
+    link: 'https://github.com/yar-24/bintangphoto',
+    cat: 'Website Development',
   },
   {
     name: 'Mendelof',
-    description:
-      'Mendelof is an application to classify leaves on coffee plants by applying the CNN (Convolutional Neural Network) method. Mendelof also contains ways to treat coffee plants that are attacked by disease.',
+    desc: 'Mendelof is an application to classify leaves on coffee plants by applying the CNN (Convolutional Neural Network) method. Mendelof also contains ways to treat coffee plants that are attacked by disease.',
     image: mendelof,
-    source_code_link: 'https://mendelof.vercel.app/',
+    link: 'https://mendelof.vercel.app/',
+    cat: 'Website Development',
   },
   {
     name: 'Dicoding Forum',
-    description:
-      'Aplikasi ini adalah forum untuk para programmer dan sebagai tugas dari dicoding.',
+    desc: 'Aplikasi ini adalah forum untuk para programmer dan sebagai tugas dari dicoding.',
     image: forum,
-    source_code_link: 'https://forum-app-yar.vercel.app/',
+    link: 'https://forum-app-yar.vercel.app/',
+    cat: 'Website Development',
   },
   {
     name: 'Chat app',
-    description:
-      'Aplikasi ini dibuat untuk memenuhi tugas dicoding yang berisikan komentar dan membuat chat.',
+    desc: 'Aplikasi ini dibuat untuk memenuhi tugas dicoding yang berisikan komentar dan membuat chat.',
     image: chat,
-    source_code_link: 'https://open-space-app-orcin.vercel.app/',
+    link: 'https://open-space-app-orcin.vercel.app/',
+    cat: 'Website Development',
   },
 ];
 

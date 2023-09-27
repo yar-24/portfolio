@@ -1,16 +1,12 @@
 'use client';
-
-import { styles } from '@/styles';
-import Image from 'next/image';
 import React from 'react';
-import Scroll from '@/public/assets/scroll.gif';
 import SectionWrapper from '@/hoc/SectionWrapper';
 
 const Hero = () => {
   return (
-    <section className="w-full h-[80vh] max-auto">
-      <div className="relative h-full mx-auto flex flex-col items-center justify-center">
-        <div className="flex flex-col items-center justify-center">
+    <section className="w-full h-screen max-auto">
+      <div className="relative h-full mx-auto flex flex-col items-center">
+        <div className="flex flex-col items-center justify-center md:mt-[10%] mt-[50%]">
           <h1 className="font-bold text-white text-[50px] md:text-center md:text-[120px] font-poppins">
             AKHYAR YAR
           </h1>
@@ -18,9 +14,6 @@ const Hero = () => {
             FRONT END, BACK END & FULLSTACK DEVELOPER.
           </h3>
         </div>
-        <a href="#about" className="absolute bottom-0">
-          <Image src={Scroll} width={60} height={100} alt="icon-scoll" />
-        </a>
       </div>
     </section>
   );

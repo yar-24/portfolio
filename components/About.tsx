@@ -22,7 +22,7 @@ const About = () => {
             className="border-2 p-7 my-2 md:w-[380px] md:h-[340px] w-[100%]"
           >
             <div className="flex ">
-              <Image src={expert.icon} alt="fe" width={50} height={50} />
+              <Image src={expert.icon} alt="fe" className="w-[50px] h-auto" />
               <div className="flex flex-col">
                 <h3
                   className="font-poppins md:text-[24px] font-bold ml-5 "

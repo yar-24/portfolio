@@ -36,14 +36,14 @@ const Navbar = () => {
         <ul
           className={` ${
             show ? 'translate-y-0' : 'translate-y-full'
-          } w-full mx-auto text-center py-5 fixed bg-gradient-to-b from-black-200 to-transparent z-50 translate-all ease-in-out duration-300 translate-y-15 list-none hidden lg:flex flex-row justify-center gap-10 font-mono`}
+          } w-full mx-auto text-center py-5 fixed bg-black-100 z-20 translate-all ease-in-out duration-300 translate-y-15 list-none flex flex-row justify-center gap-10 font-mono`}
         >
           {navLinks.map((link) => (
             <li
               key={link.id}
               className={`${
                 active === link.title ? 'text-biru' : 'text-white'
-              } hover:text-secondary text-[18px] font-medium cursor-pointer`}
+              } hover:text-secondary md:text-[18px] text-[12px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
             >
               <a href={`#${link.id}`}>{link.title}</a>
