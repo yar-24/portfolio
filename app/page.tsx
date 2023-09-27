@@ -2,12 +2,13 @@ import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import bgHero from '@/public/assets/herobg.png';
-import About from '@/components/About';
 import { codebg } from '@/public/assets';
-import Work from '@/components/Work';
+import About from '@/components/About';
 import Projects from '@/components/Projects';
 import scroll from '@/public/assets/scroll.gif';
 import Experiences from '@/components/Experiences';
+import Expertice from '@/components/Expertice';
+import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
@@ -26,16 +27,17 @@ export default function Home() {
         <div className="gradient-04" />
       </div>
       <div className="relative">
-        <About />
+        <Expertice />
         <Image
           src={codebg}
           alt="hero-bg"
           className="absolute z-0 w-[600px] h-[300px] opacity-20 bg-cover bottom-[90vh] left-[30%]"
         />
-        <Work />
+        <About />
       </div>
       <Projects />
       <Experiences />
+      <Contact />
     </div>
   );
 }

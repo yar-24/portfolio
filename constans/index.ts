@@ -40,8 +40,8 @@ export const navLinks = [
     title: '// About',
   },
   {
-    id: 'work',
-    title: '// Work',
+    id: 'experiences',
+    title: '// Experiences',
   },
   {
     id: 'contact',
@@ -127,6 +127,7 @@ const experiences = [
   {
     title: 'Front-End Web and React Developer',
     company_name: 'Study Independent | Dicoding',
+    latest: true,
     icon: dicoding,
     iconBg: '#E6DEDD',
     date: 'Aug 2022 - Des 2022',
@@ -151,7 +152,7 @@ const experiences = [
     title: 'Part-time Front-End Developer',
     company_name: 'Bintang Studio',
     icon: bintang,
-    iconBg: '#E6DEDD',
+    iconBg: '#FFFFFF',
     date: '2021-2022',
     points: [
       'Developing and maintaining web applications using React.js and other related technologies.',
@@ -159,38 +160,6 @@ const experiences = [
       'Implementing responsive design and ensuring cross-browser compatibility.',
     ],
   },
-  // {
-  //   title: 'Aug 2022 - Des 2022',
-  //   cardTitle: 'Front-End Web and React Developer',
-  //   url: 'http://www.history.com',
-  //   cardSubtitle: 'Study Independent | Dicoding',
-  //   cardDetailedText: [
-  //     'Dicoding Learned and applied a wide range of web front-end skills, from basic to expert level, while collaborating with a team.',
-  //     'As a team leader, I was responsible for generating ideas, developing both frontend and backend components, and presenting projects.',
-  //   ],
-  // },
-  // {
-  //   title: 'Apr 2022 - Aud 2022',
-  //   cardTitle: 'Full-Stack Web Developer',
-  //   url: 'http://www.history.com',
-  //   cardSubtitle: 'Scientific Writing',
-  //   cardDetailedText: [
-  //     'Universitas Gunadarma Developed an online invitation web application using the MERN stack technology.',
-  //     'Implemented a payment gateway from midtrans to facilitate secure and seamless transactions within the application.',
-  //     'Implementing responsive design and ensuring cross-browser compatibility.',
-  //   ],
-  // },
-  // {
-  //   title: '2021-2022',
-  //   cardTitle: 'Part-time Front-End Developer',
-  //   url: 'http://www.history.com',
-  //   cardSubtitle: 'Bintang Studio',
-  //   cardDetailedText: [
-  //     'Developing and maintaining web applications using React.js and other related technologies.',
-  //     'Created a visually appealing photography service website using ReactJS.',
-  //     'Implementing responsive design and ensuring cross-browser compatibility.',
-  //   ],
-  // },
 ];
 
 const certificates = [
@@ -362,6 +331,30 @@ const expertise = [
   },
 ];
 
+const katamereka = [
+  {
+    id: 1,
+    word: 'Since 2018 Yare has been responsible for the development of our website which has been instrumental to the growth of our company. Even while working remotely he’s been highly responsive, organized and strategic in his thinking. In addition to staying on top of day-to-day site changes and builds, he’s provided us with great advice to stay on top of the current changes in web technologies. He’s also implemented effective project management and Q&A processes. As a result Yare has been an highly valued and impactful member of our team.',
+    name: 'Mark Greenspan',
+    position: 'Founder at influenceTHIS Canada',
+    bgColor: '#bc60fb',
+  },
+  {
+    id: 2,
+    word: 'Yare is AMAZING! If you have any doubt about hiring him, ask me – I am really impressed by this guy!',
+    name: 'Wilfried Hajek',
+    position: 'Agile Coach | Speaker | Trainer',
+    bgColor: '#0067dc',
+  },
+  {
+    id: 3,
+    word: 'Yare is one of the best professionals that we have known in web development skills. Between his skills you can find good communication and accuracy with the planning in complex projects.',
+    name: 'Jonathan Castro',
+    position: 'CEO & Founder at The Cliff',
+    bgColor: '#923fe6',
+  },
+];
+
 export {
   services,
   technologies,
@@ -369,4 +362,5 @@ export {
   certificates,
   projects,
   expertise,
+  katamereka,
 };

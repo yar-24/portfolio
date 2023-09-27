@@ -1,64 +1,78 @@
 'use client';
 
 import { experiences } from '@/constans';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import React from 'react';
-// import { Chrono } from 'react-chrono';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
+import { motion } from 'framer-motion';
+import { textVariant } from '@/utils/motion';
+import SectionWrapper from '@/hoc/SectionWrapper';
 
-const ExperienceCard = ({ experience }: any) => {
+interface Props {
+  title: string;
+  company_name: string;
+  latest?: boolean;
+  icon: StaticImageData;
+  iconBg: string;
+  date: string;
+  points: string[];
+}
+
+console.log(experiences[0]);
+
+const CardExperiences = ({
+  title,
+  company_name,
+  latest,
+  icon,
+  iconBg,
+  date,
+  points,
+}: Props) => {
   return (
-    <VerticalTimelineElement
-      contentStyle={{ background: '#1d1836', color: '#fff' }}
-      contentArrowStyle={{ borderRight: '7px solid #232631' }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <Image
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
-        <p className="text-secondary text-[16px]">{experience.company_name}</p>
-      </div>
+    <li className="mb-10 ml-6">
+      <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+        <Image src={icon} alt="title" className="w-20 h-auto" />
+      </span>
+      <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+        {title} || {company_name}
+        {latest == true && (
+          <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
+            Latest
+          </span>
+        )}
+      </h3>
+      <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+        {date}
+      </time>
       <ul className="mt-5 list-disc ml-5 space-y-2">
-        {experience.points.map((point: any, index: number) => (
+        {points.map((point, index) => (
           <li
-            key={`experience-point-${index}`}
-            className="text-white-100 text-[14px] pl-1 tracking-wider"
+            key={index}
+            className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
           >
             {point}
           </li>
         ))}
       </ul>
-    </VerticalTimelineElement>
+    </li>
   );
 };
 
 const Experiences = () => {
   return (
-    // <div className="flex flex-col items-center h-full w-full">
-    <div className="mt-20 flex flex-col">
-      <VerticalTimeline>
-        {experiences.map((experience, index) => (
-          <React.Fragment key={index}>
-            <ExperienceCard experience={experience} />
-          </React.Fragment>
+    <div className="flex flex-col w-full h-full md:mt-20 items-center ">
+      <motion.div variants={textVariant(0.3)}>
+        <h2 className="font-poppins text-white font-bold md:w-[50%] md:text-[68px] sm:text-[58px] xs:text-[50px] text-[40px] ">
+          Professional Experience.
+        </h2>
+      </motion.div>
+      <ol className="relative border-l mt-10 border-gray-200 dark:border-gray-700 max-w-2xl">
+        {experiences.map((experience, idx) => (
+          <CardExperiences key={idx} {...experience} />
         ))}
-      </VerticalTimeline>
+      </ol>
     </div>
-    // </div>
   );
 };
 
-export default Experiences;
+export default SectionWrapper(Experiences, 'experiences');

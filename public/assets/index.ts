@@ -7,6 +7,7 @@ import github from './github.png';
 import menu from './menu.svg';
 import close from './close.svg';
 import wa from './wa.svg';
+import quote from './quote.svg';
 
 import css from './tech/css.png';
 import docker from './tech/docker.png';
@@ -39,6 +40,7 @@ import node from './node.svg';
 import arrow from './arrow.svg';
 
 import codebg from './codebg.png';
+import computer from './computer.png';
 
 export {
   logo,
@@ -77,4 +79,6 @@ export {
   node,
   arrow,
   codebg,
+  computer,
+  quote,
 };
