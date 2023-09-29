@@ -4,6 +4,8 @@ import { projects } from '@/constans';
 import Image, { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import { Tilt } from 'react-tilt';
+import { motion, Variants } from 'framer-motion';
+import { cardVariants } from '@/utils/motion';
 
 interface Props {
   name: string;
@@ -22,26 +24,35 @@ const CardProjects = ({ name, desc, image, link }: Props) => {
       }}
       className="bg-tertiary w-full rounded-md mb-4 md:mb-0"
     >
-      <a href={link} target="_blank">
-        <div className="h-auto overflow-hidden rounded-t-md">
-          <Image
-            src={image}
-            alt="eundang"
-            className="w-full h-auto rounded-t-md ease-out duration-300 hover:scale-110"
-          />
-        </div>
-        <div className="py-7 px-5 ">
-          <h1 className="font-bold text-xl">{name}</h1>
-          <p className="font-semibold mt-2 text-base text-secondary">{desc}</p>
-        </div>
-      </a>
+      <motion.div
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
+      >
+        <motion.div variants={cardVariants}>
+          <a href={link} target="_blank">
+            <div className="h-auto overflow-hidden rounded-t-md">
+              <Image
+                src={image}
+                alt="eundang"
+                className="w-full h-auto rounded-t-md ease-out duration-300 hover:scale-110"
+              />
+            </div>
+            <div className="py-7 px-5 ">
+              <h1 className="font-bold text-xl">{name}</h1>
+              <p className="font-semibold mt-2 text-base text-secondary">
+                {desc}
+              </p>
+            </div>
+          </a>
+        </motion.div>
+      </motion.div>
     </Tilt>
   );
 };
 
 const Projects = () => {
   const [item, setItem] = useState(projects);
-  const [active, setActive] = useState('');
 
   const filterItem = (curcat: string) => {
     const newItem = projects.filter((newVal) => {
@@ -75,6 +86,7 @@ const Projects = () => {
           Mobile Development
         </li>
       </ul>
+
       <div className="md:grid flex flex-col grid-cols-3 gap-4 w-full cursor-pointer">
         {item.map(
           (project, idx) => idx < 3 && <CardProjects key={idx} {...project} />

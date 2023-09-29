@@ -6,11 +6,54 @@ import { logo, menu, close } from '@/public/assets';
 import Image from 'next/image';
 import Link from 'next/link';
 import { navLinks } from '@/constans';
+import { stagger, useAnimate } from 'framer-motion';
+import { motion } from 'framer-motion';
+
+const staggerMenuItems = stagger(0.1, { startDelay: 0.15 });
+
+const useMenuAnimation = (toggle: boolean) => {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    animate('.menu', { rotate: toggle ? 180 : 0 }, { duration: 0.2 });
+
+    if (toggle == true) {
+      animate(
+        'ul',
+        {
+          clipPath: toggle
+            ? 'inset(0% 0% 0% 0% round 10px)'
+            : 'inset(10% 50% 90% 50% round 10px)',
+        },
+        {
+          type: 'spring',
+          bounce: 0,
+          duration: 0.5,
+        }
+      );
+
+      animate(
+        'li',
+        toggle
+          ? { opacity: 1, scale: 1, filter: 'blur(0px)' }
+          : { opacity: 0, scale: 0.3, filter: 'blur(20px)' },
+        {
+          duration: 0.2,
+          delay: toggle ? staggerMenuItems : 0,
+        }
+      );
+    }
+  }, [toggle]);
+
+  return scope;
+};
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [show, setShow] = useState(false);
+
+  const scope = useMenuAnimation(toggle);
 
   const controlNavbar = () => {
     if (window.scrollY > 250) {
@@ -27,6 +70,12 @@ const Navbar = () => {
     };
   }, []);
 
+  const refreshPage = () => {
+    window.location.reload();
+    window.scrollTo(0, 0);
+    setActive('');
+  };
+
   const fileUrl =
     'https://drive.google.com/uc?export=download&id=1ioIBr1VoDrj1WjZaBYffSxFyv7WqHxdx';
 
@@ -34,14 +83,14 @@ const Navbar = () => {
     <>
       {show && (
         <ul
-          className={` ${
+          className={`mobile-ul${
             show ? 'translate-y-0' : 'translate-y-full'
           } w-full mx-auto text-center py-5 fixed bg-black-100 z-20 translate-all ease-in-out duration-300 translate-y-15 list-none flex flex-row justify-center gap-5 font-mono`}
         >
           {navLinks.map((link) => (
             <li
               key={link.id}
-              className={`${
+              className={`mobile-li ${
                 active === link.title ? 'text-biru' : 'text-white'
               } hover:text-secondary md:text-[18px] text-[14px] font-medium cursor-pointer`}
               onClick={() => setActive(link.title)}
@@ -52,16 +101,14 @@ const Navbar = () => {
         </ul>
       )}
       <nav
+        ref={scope}
         className={`${styles.paddingX} px-6 w-full flex items-center relative py-5 top-0 z-20 bg-transparent`}
       >
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link
             href="/"
             className="flex items-center gap-2"
-            onClick={() => {
-              setActive('');
-              window.scrollTo(0, 0);
-            }}
+            onClick={refreshPage}
           >
             <Image src={logo} alt="logo" className="w-9 h-9 object-contain" />
             <p className="text-biru text-[28px] font-bold font-mono cursor-pointer flex">
@@ -92,23 +139,33 @@ const Navbar = () => {
 
           {/* Mobile */}
           <div className="lg:hidden flex flex-1 justify-end items-center">
-            <Image
-              src={toggle ? close : menu}
-              alt="menu"
-              className="w-[28px] h-[28px] object-contain cursor-pointer"
+            <motion.button
+              whileTap={{ scale: 0.97 }}
               onClick={() => setToggle(!toggle)}
-            />
+            >
+              <Image
+                src={toggle ? close : menu}
+                alt="menu"
+                className="menu w-[28px] h-[28px] object-contain cursor-pointer"
+              />
+            </motion.button>
             <div
               className={`${
                 !toggle ? 'hidden' : 'flex'
               } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
             >
-              <ul className="list-none flex justify-end items-start flex-col gap-4">
+              <ul
+                style={{
+                  pointerEvents: toggle ? 'auto' : 'none',
+                  clipPath: 'inset(10% 50% 90% 50% round 10px)',
+                }}
+                className="list-none flex justify-end items-start flex-col gap-4"
+              >
                 {navLinks.map((link) => (
                   <li
                     key={link.id}
                     className={`${
-                      active === link.title ? 'text-white' : 'text-secondary'
+                      active === link.title ? 'text-black-200' : 'text-white'
                     } font-poppins font-medium cursor-pointer text-[16px]`}
                     onClick={() => {
                       setToggle(!toggle);

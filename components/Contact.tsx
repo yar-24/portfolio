@@ -1,7 +1,7 @@
 'use client';
 
 import React, { FormEvent } from 'react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { slideIn } from '@/utils/motion';
 import emailjs from '@emailjs/browser';
@@ -11,7 +11,6 @@ import Image from 'next/image';
 import { katamereka } from '@/constans';
 
 const Contact = () => {
-  const formRef = useRef<HTMLInputElement>();
   const [form, setForm] = useState({
     name: '',
     email: '',

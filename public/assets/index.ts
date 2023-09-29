@@ -40,7 +40,6 @@ import node from './node.svg';
 import arrow from './arrow.svg';
 
 import codebg from './codebg.png';
-import computer from './computer.png';
 
 export {
   logo,
@@ -79,6 +78,5 @@ export {
   node,
   arrow,
   codebg,
-  computer,
   quote,
 };
