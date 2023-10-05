@@ -10,7 +10,7 @@ const Hero = () => {
     <section className="w-full h-screen max-auto">
       <motion.div variants={textVariant(0.3)}>
         <div className="relative h-full mx-auto flex flex-col items-center">
-          <div className="flex flex-col items-center justify-center md:mt-[10%] mt-[50%]">
+          <div className="flex flex-col items-center justify-center md:mt-[10%] sm:mt-[30%] mt-[50%]">
             <TypingText
               title="YARE"
               textStyles="font-bold text-white text-[50px] md:text-center md:text-[120px] font-poppins"

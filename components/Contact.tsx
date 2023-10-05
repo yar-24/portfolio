@@ -52,7 +52,7 @@ const Contact = () => {
       });
   };
   return (
-    <div className="xl:mt-12 xl:flex-row mb-10 md:flex-col-reverse flex flex-col gap-5 overflow-hidden ">
+    <section className="xl:mt-12 xl:flex-row mb-10 md:flex-col-reverse flex flex-col gap-5 overflow-hidden ">
       <motion.div
         variants={slideIn('left', 'tween', 0.2, 1)}
         className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
@@ -137,7 +137,7 @@ const Contact = () => {
           </>
         ))}
       </motion.div>
-    </div>
+    </section>
   );
 };
 

@@ -62,7 +62,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="relative flex flex-col w-full h-auto max-auto sm:px-16 px-6 xl:my-0 sm:my-[20%] my-[30%]">
+    <section className="relative flex flex-col w-full h-auto max-auto sm:px-16 px-6 xl:my-0 sm:my-[20%] my-[30%]">
       <ul className="flex list-none md:gap-4 gap-2 font-poppins text-secondary mb-5">
         <li className="md:text-base text-sm">Filter by</li>
         <li
@@ -119,7 +119,7 @@ const Projects = () => {
           )}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

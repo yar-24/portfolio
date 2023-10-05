@@ -9,7 +9,7 @@ import { fadeIn } from '@/utils/motion';
 
 const About = () => {
   return (
-    <div className="relative flex md:flex-row flex-col items-center md:justify-between w-full h-screen max-auto pt-26 md:pt-0">
+    <section className="relative flex md:flex-row flex-col items-center md:justify-between w-full h-screen max-auto pt-26 md:pt-0">
       <div className="flex flex-col md:w-[40%] ">
         <motion.div variants={fadeIn('right', 'spring', 0.5, 1)}>
           <h1 className="text-[60px] md:text-[110px] font-poppins font-bold leading-tight w-40">
@@ -65,7 +65,7 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 
