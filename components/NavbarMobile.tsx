@@ -66,7 +66,7 @@ const Menu = () => {
   const fileUrl =
     'https://drive.google.com/uc?export=download&id=11FUku-6AL10DUFiFv66eOcCnpKJfJkEg';
   return (
-    <nav className="menu">
+    <nav className="menu w-[400px] md:w-[600px]">
       <ul className="flex flex-col gap-[10px] p-[15px]">
         {navLinks.map((link) => (
           <li

@@ -47,7 +47,7 @@ const CardProjects = ({ name, cat, image, link, desc }: Props) => {
         {selectedId && (
           <motion.div
             layoutId={selectedId}
-            className="fixed z-30 flex justify-center items-center w-full h-full backdrop-blur-sm top-0 right-0 overflow-hidden mt-16"
+            className="fixed z-10 flex justify-center items-center w-full h-full backdrop-blur-sm top-0 right-0 overflow-hidden"
           >
             <div className="relative bg-black-200 w-[500px] h-max">
               <a
@@ -126,7 +126,7 @@ const Projects = () => {
         </li>
       </ul>
 
-      <div className="md:grid flex flex-col grid-cols-3 gap-4 w-full">
+      <div className="lg:grid flex flex-col grid-cols-3 gap-4 w-full">
         {item.map(
           (project, idx) => idx < 3 && <CardProjects key={idx} {...project} />
         )}

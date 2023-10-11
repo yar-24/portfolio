@@ -20,7 +20,7 @@ const Expertice = () => {
           {expertise.map((expert, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between border-2 p-7 my-2 md:w-[380px] md:h-[400px] w-[100%] h-[300px]"
+              className="flex flex-col justify-between border-2 p-7 my-2 xl:w-[380px] md:w-[600px] md:h-[350px] w-[100%] h-[300px]"
             >
               <div className="flex ">
                 <Image src={expert.icon} alt="fe" className="w-[50px] h-auto" />
