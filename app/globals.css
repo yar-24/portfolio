@@ -78,12 +78,6 @@ body {
   will-change: transform;
 }
 
-ul,
-li {
-  list-style: none;
-  margin: 0;
-}
-
 @keyframes mulShdSpin {
   0%,
   100% {

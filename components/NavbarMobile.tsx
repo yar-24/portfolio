@@ -21,10 +21,20 @@ function useMenuAnimation(isOpen: boolean) {
             { transform: 'scale(1)', opacity: 1, filter: 'blur(0px)' },
             { delay: stagger(0.05), at: '-0.1' },
           ],
+          [
+            'a',
+            { transform: 'scale(1)', opacity: 1, filter: 'blur(0px)' },
+            { delay: stagger(0.05), at: '-0.1' },
+          ],
         ]
       : [
           [
             'li',
+            { transform: 'scale(0.5)', opacity: 0, filter: 'blur(10px)' },
+            { delay: stagger(0.05, { from: 'last' }), at: '<' },
+          ],
+          [
+            'a',
             { transform: 'scale(0.5)', opacity: 0, filter: 'blur(10px)' },
             { delay: stagger(0.05, { from: 'last' }), at: '<' },
           ],
@@ -52,6 +62,9 @@ function useMenuAnimation(isOpen: boolean) {
 
 const Menu = () => {
   const [active, setActive] = useState('');
+
+  const fileUrl =
+    'https://drive.google.com/uc?export=download&id=11FUku-6AL10DUFiFv66eOcCnpKJfJkEg';
   return (
     <nav className="menu">
       <ul className="flex flex-col gap-[10px] p-[15px]">
@@ -66,6 +79,12 @@ const Menu = () => {
             <a href={`#${link.id}`}>{link.title}</a>
           </li>
         ))}
+        <a
+          href={fileUrl}
+          className="menu-a flex justify-center mt-10 hover:text-white text-[18px] w-[50%] font-medium cursor-pointer py-2 px-3 rounded-sm bg-ungu"
+        >
+          <button>Download CV</button>
+        </a>
       </ul>
     </nav>
   );
