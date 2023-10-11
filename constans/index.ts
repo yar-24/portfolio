@@ -28,6 +28,7 @@ import {
   monitor,
   react,
   node,
+  sablonkuy,
 } from '@/public/assets';
 
 export const navLinks = [
@@ -264,13 +265,15 @@ const certificates = [
 
 const projects = [
   {
+    id: 1,
     name: 'Nafas',
     desc: 'Web-based platform that allows users to search, buy, and manage blog, providing a convenient and efficient solution for plants your needs.',
     image: nafas,
     link: 'https://nafas-mu.vercel.app/',
-    cat: 'Mobile Development',
+    cat: 'Website Development',
   },
   {
+    id: 2,
     name: 'EUndang',
     desc: 'A web application that allows users to order invitation templates, view interesting themes, and be able to order with a paymentgateway.',
     image: eundang,
@@ -278,13 +281,15 @@ const projects = [
     cat: 'Website Development',
   },
   {
+    id: 3,
     name: 'Bintang photo',
-    desc: 'Ordering and service platform available at the star photo studio company.',
+    desc: 'Booking platform and photography services available at Bintang photo studio Yogyakarta.',
     image: bintangphoto,
     link: 'https://github.com/yar-24/bintangphoto',
     cat: 'Website Development',
   },
   {
+    id: 4,
     name: 'Mendelof',
     desc: 'Mendelof is an application to classify leaves on coffee plants by applying the CNN (Convolutional Neural Network) method. Mendelof also contains ways to treat coffee plants that are attacked by disease.',
     image: mendelof,
@@ -292,17 +297,19 @@ const projects = [
     cat: 'Website Development',
   },
   {
-    name: 'Dicoding Forum',
-    desc: 'Aplikasi ini adalah forum untuk para programmer dan sebagai tugas dari dicoding.',
-    image: forum,
-    link: 'https://forum-app-yar.vercel.app/',
-    cat: 'Website Development',
+    id: 5,
+    name: 'SablonKuy',
+    desc: 'This application project was created using react native and implemented payment gateway and rajaongkir as APIs to calculate shipping. ',
+    image: sablonkuy,
+    link: 'https://github.com/yar-24/sablon24App',
+    cat: 'Mobile Development',
   },
   {
-    name: 'Chat app',
-    desc: 'Aplikasi ini dibuat untuk memenuhi tugas dicoding yang berisikan komentar dan membuat chat.',
-    image: chat,
-    link: 'https://open-space-app-orcin.vercel.app/',
+    id: 6,
+    name: 'Dicoding Forum',
+    desc: 'This application is a forum for programmers and as a task of dicoding.',
+    image: forum,
+    link: 'https://forum-app-yar.vercel.app/',
     cat: 'Website Development',
   },
 ];

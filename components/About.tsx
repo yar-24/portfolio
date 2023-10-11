@@ -37,7 +37,7 @@ const About = () => {
             controlsList="nodownload"
             className="relative"
           >
-            <source data-src="/hp.webm" src="/hp.webm" type="video/webm" />
+            <source src="/hp.webm" type="video/webm" />
           </video>
           <div className="absolute flex flex-col bottom-0 lg:bottom-10 md:right-0">
             <Image

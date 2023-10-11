@@ -3,8 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+body {
   --line-color: #e5e7eb;
+  --primary: #050816;
+  --secondary: #aaa6c3;
+  --tertiary: #151030;
+  --biru: #66d9ed;
+  --ungu: #9b51e0;
+  --black-200: #090325;
 }
 
 * {
@@ -31,10 +37,51 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 50;
   height: 10px;
   background: linear-gradient(90.13deg, #66d9ed 1.9%, #9b51e0 97.5%);
   transform-origin: 0%;
+}
+
+.btn-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--biru);
+  padding: 10px;
+}
+.btn-menu path {
+  fill: white;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 400px;
+  background: var(--black-200);
+  padding-top: 100px;
+  transform: translateX(100%);
+  will-change: transform;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
 }
 
 @keyframes mulShdSpin {

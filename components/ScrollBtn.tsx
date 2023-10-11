@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { SVGProps, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ScrollBtn = () => {
   const [visible, setVisible] = useState(false);
@@ -25,12 +24,14 @@ const ScrollBtn = () => {
     });
   };
 
-  window.addEventListener('scroll', toggleVisible);
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible);
+  }, []);
 
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed flex md:bottom-10 bottom-5 md:right-10 right-5 ${
+      className={`fixed z-20 md:bottom-10 bottom-5 md:right-10 right-5 ${
         visible ? 'inline ' : 'hidden'
       }`}
     >

@@ -90,6 +90,7 @@ const Contact = () => {
           <label className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea
+              rows={10}
               name="message"
               value={form.message}
               onChange={handleChange}
@@ -107,15 +108,14 @@ const Contact = () => {
       </motion.div>
       <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
-        className="md:grid grid-rows-3 grid-flow-col w-full"
+        className="flex-1"
       >
-        {katamereka?.map((kata, idx) => (
-          <>
+        {katamereka?.map((kata) => (
+          <div key={kata.id} className="w-full bg-red-500 grid">
             {kata.id == 1 ? (
               <div
-                className="row-span-3 col-auto p-7"
+                className="row-span-4 p-7"
                 style={{ backgroundColor: `${kata.bgColor}` }}
-                key={idx}
               >
                 <Image src={quote} alt={kata.name} width={80} height={80} />
                 <p>{kata.word}</p>
@@ -124,9 +124,8 @@ const Contact = () => {
               </div>
             ) : (
               <div
-                className="row-span-1 col-span-1 p-7"
+                className="p-7"
                 style={{ backgroundColor: `${kata.bgColor}` }}
-                key={idx}
               >
                 <Image src={quote} alt={kata.name} width={80} height={80} />
                 <p>{kata.word}</p>
@@ -134,7 +133,7 @@ const Contact = () => {
                 <p>{kata.position}</p>
               </div>
             )}
-          </>
+          </div>
         ))}
       </motion.div>
     </section>

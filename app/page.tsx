@@ -25,6 +25,7 @@ export default function Home() {
   return (
     <>
       <StrictMode>
+        <motion.div className="progress-bar" style={{ scaleX }} />
         <div className="relative z-0 bg-primary overflow-x-hidden">
           <div className="flex relative flex-col items-center">
             <Image
@@ -61,7 +62,6 @@ export default function Home() {
         </div>
       </StrictMode>
       <ScrollBtn />
-      <motion.div className="progress-bar" style={{ scaleX }} />
     </>
   );
 }

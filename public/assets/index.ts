@@ -33,6 +33,7 @@ import bintangphoto from './bintangphoto.png';
 import mendelof from './mendelof.png';
 import forum from './forum.png';
 import chat from './chat.png';
+import sablonkuy from './sablonkuy.png';
 
 import monitor from './monitor.svg';
 import react from './react.svg';
@@ -73,6 +74,7 @@ export {
   mendelof,
   forum,
   chat,
+  sablonkuy,
   monitor,
   react,
   node,

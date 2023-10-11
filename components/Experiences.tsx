@@ -17,8 +17,6 @@ interface Props {
   points: string[];
 }
 
-console.log(experiences[0]);
-
 const CardExperiences = ({
   title,
   company_name,
@@ -74,7 +72,7 @@ const Experiences = () => {
           Professional Experience.
         </h2>
       </motion.div>
-      <ol className="relative border-l mt-10 border-gray-200 dark:border-gray-700 max-w-2xl">
+      <ol className="relative border-l mt-10 border-gray-200 dark:border-gray-700 max-w-3xl">
         {experiences.map((experience, idx) => (
           <CardExperiences key={idx} {...experience} />
         ))}
