@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { styles } from '../styles';
 import { logo } from '@/public/assets';
 import Image from 'next/image';
@@ -10,6 +10,20 @@ import NavbarMobile from './NavbarMobile';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
+  const [visible, setVisible] = useState(false);
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+    if (scrolled > 100) {
+      setVisible(true);
+    } else if (scrolled <= 100) {
+      setVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', toggleVisible);
+  }, []);
 
   const refreshPage = () => {
     window.location.reload();
@@ -37,7 +51,13 @@ const Navbar = () => {
             <span className="text-ungu">_</span>
           </p>
         </Link>
-        <ul className="list-none hidden lg:flex flex-row gap-10 font-mono">
+        <ul
+          className={`${
+            visible
+              ? 'fixed flex -translate-y-0 ease-in duration-300 justify-center items-center right-0 left-0 top-0 w-full h-14 backdrop-blur-sm '
+              : 'block -translate-y-0'
+          } list-none hidden lg:flex flex-row gap-10 font-mono`}
+        >
           {navLinks.map((link) => (
             <li
               key={link.id}
