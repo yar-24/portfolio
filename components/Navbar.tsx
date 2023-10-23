@@ -54,21 +54,35 @@ const Navbar = () => {
         <ul
           className={`${
             visible
-              ? 'fixed flex -translate-y-0 ease-in duration-300 justify-center items-center right-0 left-0 top-0 w-full h-14 backdrop-blur-sm '
+              ? 'fixed flex -translate-y-0 ease-in duration-300 justify-center items-center left-0 top-5 w-full '
               : 'block -translate-y-0'
-          } list-none hidden lg:flex flex-row gap-10 font-mono`}
+          } list-none hidden lg:flex flex-row font-mono`}
         >
-          {navLinks.map((link) => (
-            <li
-              key={link.id}
-              className={`${
-                active === link.title ? 'text-biru' : 'text-white'
-              } hover:text-secondary text-[18px] font-medium cursor-pointer`}
-              onClick={() => setActive(link.title)}
-            >
-              <a href={`#${link.id}`}>{link.title}</a>
-            </li>
-          ))}
+          <div
+            className={`${
+              visible && 'bg-black'
+            } relative w-max flex justify-center items-center py-5 pl-5 pr-20 gap-10 rounded-xl`}
+          >
+            {navLinks.map((link) => (
+              <li
+                key={link.id}
+                className={`${
+                  active === link.title ? 'text-biru' : 'text-white'
+                } hover:text-secondary text-[18px] font-medium cursor-pointer`}
+                onClick={() => setActive(link.title)}
+              >
+                <a href={`#${link.id}`}>{link.title}</a>
+              </li>
+            ))}
+            {visible ? (
+              <a
+                href={fileUrl}
+                className="hidden absolute lg:flex hover:text-white text-black text-[18px] font-medium cursor-pointer py-3 px-5 rounded-xl hover:bg-ungu bg-white -right-24"
+              >
+                <button>Download CV</button>
+              </a>
+            ) : null}
+          </div>
         </ul>
         <a
           href={fileUrl}
